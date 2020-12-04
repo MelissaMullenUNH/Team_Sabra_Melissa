@@ -42,7 +42,8 @@ app/tmp/
 app/static/tmp/
 
 # Google Cloud Credentials
-# aikey.json
+aikey.json
+key.json
 
 # Mac Files
 .DS_Store 
