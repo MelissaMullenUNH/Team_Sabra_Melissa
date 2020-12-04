@@ -14,7 +14,7 @@ or
 virtualenv .
 ```
 
-## 3. Activate Virtual Enviromment
+## 3. Activate Virtual Environment
 Linux
 ```
 source bin/activate
