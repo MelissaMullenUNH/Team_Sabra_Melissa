@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Image Search</title>
+    </head>
+    <body>
+        <p>Take Photo</p>
+        <a href="/camera"><input type="button" value="Open Camera"></a> 
+
+        <p>Upload an Image</p>
+        <form action = "search" method = "POST" 
+            enctype = "multipart/form-data">
+            <input type = "file" name = "file" />
+            <input type = "submit"/>
+        </form> 
+
+    <section class="row">
+        {% for image in images %}
+            <section class="col-md-4 col-sm-6" style="background-color: green;">
+                <img src="{{ url_for('static', filename='capture_image/' + image) }}">
+            </section>
+        {% endfor %}
+    </section>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Search Results</title>
+        <style>
+            .grid-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: 5px;
+            }
+            .grid-item {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Original Image:</h2>
+        <div> <img src="{{ original }}" style="max-width: 400px;" alt="original image"> </div>
+        
+        <h2>Prediction Results:</h2>
+        {{ prediction_results }}
+        
+        <h2>Key:</h2>
+        <p>Looking: {{ pred_look }} </p>
+        <p>Not looking: {{ pred_away }}</p>
+        </div>
+    </body>
+</html>
