@@ -2,7 +2,6 @@ Flask==1.1.2
 google-cloud-vision==1.0.0
 google-cloud-automl==1.0.1
 tensorflow
-base64
-json
+pybase64
 google-api-python-client
 opencv-python
