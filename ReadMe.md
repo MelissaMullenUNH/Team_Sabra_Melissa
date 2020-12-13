@@ -34,6 +34,10 @@ pip install -r requirements.txt
 ```
 flask run
 ```
+or
+```
+python -m flask run
+```
 Check http://localhost:5000/
 
 
