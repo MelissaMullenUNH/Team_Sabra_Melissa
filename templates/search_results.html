@@ -10,18 +10,32 @@
             .grid-item {
                 text-align: center;
             }
+            .header {
+                padding: 2px;
+                text-align: center;
+                border: 2px solid black;
+                background-color: #bfbfbf;
+                color: blue;
+                font-size: 15;
+            }
         </style>
     </head>
-    <body>
-        <h2>Original Image:</h2>
+    <body style="background-color:#f2f2f2;">
+        <div class="header">
+            <h1>Page Title</h1>
+        </div>
+
+        <h2 style="color:blue;">Original Image:</h2>
         <div> <img src="{{ original }}" style="max-width: 400px;" alt="original image"> </div>
         
-        <h2>Prediction Results:</h2>
+        <HR COLOR="blue" SIZE="3">
+        <h2 style="color:blue;">Prediction Results:</h2>
         {{ prediction_results }}
         
-        <h2>Key:</h2>
+        <h2 style="color:blue;">Key:</h2>
         <p>Looking: {{ pred_look }} </p>
         <p>Not looking: {{ pred_away }}</p>
+        <HR COLOR="blue" SIZE="3">
         </div>
     </body>
 </html>

@@ -1,16 +1,71 @@
 <html>
     <head>
         <title>Image Search</title>
+    <!--The following code styles the buttons. The webkit code was 
+    adapted from this website: 
+    https://developer.mozilla.org/en-US/docs/Web/CSS/::file-selector-button
+    -->
+    <style>
+    .button {
+        background-color: blue;
+        border: 2px solid black;
+        color: white;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .header {
+        padding: 2px;
+        text-align: center;
+        border: 2px solid black;
+        background-color: #bfbfbf;
+        color: blue;
+        font-size: 15;
+    } 
+    input[type=file]::-webkit-file-upload-button {
+        background-color: blue;
+        border: 2px solid black;
+        color: white;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    input[type=file]::file-selector-button {
+        background-color: blue;
+        border: 2px solid black;
+        color: white;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+   
+    </style>    
     </head>
-    <body>
-        <p>Take Photo</p>
-        <a href="/camera"><input type="button" value="Open Camera"></a> 
+    <body style="background-color:#f2f2f2;">
+        <div class="header">
+            <h1>Page Title</h1>
+        </div>
+        <p><b>Take Photo</b></p>
+        <a href="/camera"><input type="button" class="button" value="Open Camera"></a> 
 
-        <p>Upload an Image</p>
+        <p><b>Upload an Image</b></p>
         <form action = "search" method = "POST" 
             enctype = "multipart/form-data">
-            <input type = "file" name = "file" />
-            <input type = "submit"/>
+            <label for="file"></label>
+            <input type = "file" name = "file" id="file"/>
+            <input type = "submit" class="button"/>
         </form> 
 
     <section class="row">
