@@ -46,8 +46,8 @@ def upload_file():
         filepath: uploaded picture.
         prediction_results: array of prediction results (floats)
             defined by the model.
-        pred_look (float): probability of looking at screen.
-        pred_away (float): probability of looking away from screen.
+        pred_look (string): probability of looking at screen.
+        pred_away (string): probability of looking away from screen.
     """
     if request.method == 'POST':
         file = request.files['file']
@@ -75,8 +75,8 @@ def camera():
         image: picture taken on your webcam (png file)
         prediction_results: array of prediction results (floats)
             defined by the model.
-        pred_look (float): probability of looking at screen.
-        pred_away (float): probability of looking away from screen.
+        pred_look (string): probability of looking at screen.
+        pred_away (string): probability of looking away from screen.
     """
 
     camera = cv2.VideoCapture(0)
@@ -137,8 +137,8 @@ def search(f):
     Returns:
         prediction_results: array of prediction results (floats)
             defined by the model.
-        pred_look (float): probability of looking at screen.
-        pred_away (float): probability of looking away from screen.
+        pred_look (string): probability of looking at screen.
+        pred_away (string): probability of looking away from screen.
     """
 
     with open(f, 'rb') as image_file:
@@ -171,8 +171,8 @@ def search(f):
         raise RuntimeError(response['error'])
 
     prediction_results = response['predictions'][0]['probabilities']
-    pred_look = prediction_results[0]
-    pred_away = prediction_results[1]
+    pred_look = str(prediction_results[0] * 100) + "%"
+    pred_away = str(prediction_results[1] * 100) + "%"
 
     return prediction_results, pred_look, pred_away
 
