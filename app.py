@@ -79,6 +79,7 @@ def camera():
         if key%256 == 27:
             # ESC pressed
             print("Escape hit, closing camera")
+            image = "static/error.png"
             break
 
         elif key%256 == 32:
