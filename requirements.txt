@@ -5,3 +5,5 @@ tensorflow
 pybase64
 google-api-python-client
 opencv-python ==4.1.2.30
+Werkzeug
+google-api-core
