@@ -53,11 +53,15 @@
    
     </style>    
     </head>
+    <!-- Setting the background color and the header -->
     <body style="background-color:#f2f2f2;">
         <div class="header">
             <h1>Attention Detection: Image Selection</h1>
         </div>
+        
+        <!-- The following code adds a blue line across the page -->
         <HR COLOR="blue" SIZE="3">
+        <!-- Code for taking a photo -->    
         <p><b>Take Photo</b></p>
         <a href="/camera"><input type="button" class="button" value="Open Camera"></a> 
         <p><b>Instructions:</b><br>
@@ -67,6 +71,8 @@
             3) Click the space bar key to take a picture.    
         </p>
         <HR COLOR="blue" SIZE="3">
+
+        <!-- Code for uploading a photo -->    
         <p><b>Upload an Image</b></p>
         <form action = "search" method = "POST" 
             enctype = "multipart/form-data">
@@ -74,7 +80,6 @@
             <input type = "file" name = "file" id="file"/>
             <input type = "submit" class="button"/>
         </form>
-
         <p><b>Instructions:</b><br>
             1) Clicking on "Choose File" will open your File Explorer. <br>
             2) Locate and select the image you want to upload. <br>

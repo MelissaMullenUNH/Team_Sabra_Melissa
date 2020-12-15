@@ -20,17 +20,18 @@
             }
         </style>
     </head>
+    <!-- Setting the background color and the header -->
     <body style="background-color:#f2f2f2;">
         <div class="header">
             <h1>Attention Detection: Model Results</h1>
         </div>
-
+        <!-- Code for Original Image display -->
         <h2 style="color:blue;">Original Image:</h2>
         <div> <img src="{{ original }}" style="max-width: 400px;" alt="original image"> </div>
-        
         <HR COLOR="blue" SIZE="3">
-        <h2 style="color:blue;">Prediction Results:</h2>
 
+        <!-- Code for Prediction Results display -->
+        <h2 style="color:blue;">Prediction Results:</h2>
         <p><b>Probability of Looking At Screen: </b>{{ pred_look }} </p>
         <p><b>Probability of Looking Away From Screen: </b>{{ pred_away }}</p>
         <HR COLOR="blue" SIZE="3">
