@@ -111,7 +111,6 @@ def search(f):
 
     """
     Send json data to a deployed model for prediction.
-
     Args:
         project (str): project where the Cloud ML Engine Model is deployed.
         region (str): regional endpoint to use; set to None for
