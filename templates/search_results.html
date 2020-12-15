@@ -13,7 +13,7 @@
             .header {
                 padding: 2px;
                 text-align: center;
-                border: 2px solid black;
+                border: 3px solid black;
                 background-color: #bfbfbf;
                 color: blue;
                 font-size: 15;
@@ -22,7 +22,7 @@
     </head>
     <body style="background-color:#f2f2f2;">
         <div class="header">
-            <h1>Page Title</h1>
+            <h1>Attention Detection: Model Results</h1>
         </div>
 
         <h2 style="color:blue;">Original Image:</h2>
@@ -30,11 +30,9 @@
         
         <HR COLOR="blue" SIZE="3">
         <h2 style="color:blue;">Prediction Results:</h2>
-        {{ prediction_results }}
-        
-        <h2 style="color:blue;">Key:</h2>
-        <p>Looking: {{ pred_look }} </p>
-        <p>Not looking: {{ pred_away }}</p>
+
+        <p><b>Probability of Looking At Screen: </b>{{ pred_look }} </p>
+        <p><b>Probability of Looking Away From Screen: </b>{{ pred_away }}</p>
         <HR COLOR="blue" SIZE="3">
         </div>
     </body>

@@ -21,7 +21,7 @@
     .header {
         padding: 2px;
         text-align: center;
-        border: 2px solid black;
+        border: 3px solid black;
         background-color: #bfbfbf;
         color: blue;
         font-size: 15;
@@ -55,19 +55,32 @@
     </head>
     <body style="background-color:#f2f2f2;">
         <div class="header">
-            <h1>Page Title</h1>
+            <h1>Attention Detection: Image Selection</h1>
         </div>
+        <HR COLOR="blue" SIZE="3">
         <p><b>Take Photo</b></p>
         <a href="/camera"><input type="button" class="button" value="Open Camera"></a> 
-
+        <p><b>Instructions:</b><br>
+            1) Clicking on "Open Camera" will open another window on your computer. 
+            Locate that window and click on it. <br>
+            2) Smile!<br>
+            3) Click the space bar key to take a picture.    
+        </p>
+        <HR COLOR="blue" SIZE="3">
         <p><b>Upload an Image</b></p>
         <form action = "search" method = "POST" 
             enctype = "multipart/form-data">
             <label for="file"></label>
             <input type = "file" name = "file" id="file"/>
             <input type = "submit" class="button"/>
-        </form> 
+        </form>
 
+        <p><b>Instructions:</b><br>
+            1) Clicking on "Choose File" will open your File Explorer. <br>
+            2) Locate and select the image you want to upload. <br>
+            3) Click submit.   
+        </p>
+        <HR COLOR="blue" SIZE="3">
     <section class="row">
         {% for image in images %}
             <section class="col-md-4 col-sm-6" style="background-color: green;">
