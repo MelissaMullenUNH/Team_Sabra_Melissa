@@ -121,37 +121,26 @@ def camera():
         pred_away=pred_away
     )
 
-
 def search(f):
-    """
-    Send json data to a deployed model for prediction.
-    Args:
-        project (str): project where the Cloud ML Engine Model is deployed.
-        region (str): regional endpoint.
-        model (str): model name.
-        version (str): version of model.
-        instances ([Mapping[str: Any]]): Keys should be the names of Tensors
-            your deployed model expects as inputs. Values should be datatypes
-            convertible to Tensors, or (potentially nested) lists of
-            datatypes convertible to tensors.
-    Returns:
-        prediction_results: array of prediction results (floats)
-            defined by the model.
-        pred_look (string): probability of looking at screen.
-        pred_away (string): probability of looking away from screen.
-    """
-
+    '''
+    This function takes the image that the user either submits or takes, converts
+    it into binary code, and send the code to the specific AI Platform Image
+    Classification Model. This will then return probability for each class.
+    '''
+    #convert image to binary encoded string for the model to read
     with open(f, 'rb') as image_file:
         encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
 
     image_bytes = {'b64': str(encoded_string)}
     instances = [{'image_bytes': image_bytes, 'key': '1'}]
-
+    
+    #establishing varibales for calling model
     project = "aitry-294619"
     region = "us-central1"
-    model = "Model_3"
+    model = "trial41"
     version = "v1"
 
+    #creating the api endpoint from model variables
     prefix = "{}-ml".format(region) if region else "ml"
     api_endpoint = "https://{}.googleapis.com".format(prefix)
     client_options = ClientOptions(api_endpoint=api_endpoint)
@@ -161,7 +150,8 @@ def search(f):
 
     if version is not None:
         name += '/versions/{}'.format(version)
-
+    
+    #sending the image to the model for running
     response = service.projects().predict(
         name=name,
         body={'instances': instances}
@@ -169,7 +159,8 @@ def search(f):
 
     if 'error' in response:
         raise RuntimeError(response['error'])
-
+        
+    #return results as a percentage
     prediction_results = response['predictions'][0]['probabilities']
     pred_look = str(prediction_results[0] * 100) + "%"
     pred_away = str(prediction_results[1] * 100) + "%"

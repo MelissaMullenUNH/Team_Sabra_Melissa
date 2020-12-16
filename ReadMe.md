@@ -1,51 +1,12 @@
 # README for Sabra and Melissa's Group Implementation Project
 
-## 1. Authentication
-This sample requires you to have authentication setup. Refer to the [Authentication Getting Started Guide](https://cloud.google.com/docs/authentication/getting-started) for instructions on setting up credentials for applications.
+## Attention Detection
 
-Place a JSON file that contains your key in the main directory. The file name should be `aikey.json`.
+## 1. Objective of project
+The goal of this project was to create a method of detecting if someone in a picture is looking at the screen or not. The aim was also to use a built-in algorithm on the Google Cloud Platform and use a basic web application for user interaction. 
+The idea behind this project was to detect whether someone was paying attention to their computer. With our current pandemic much of school and business meetings are being conducted online, it is useful to make sure that people are paying attention to their screen.
 
-## 2. Create Python Virtual Environment
-```
-python -m venv .
-```
-or
-```
-virtualenv .
-```
-
-## 3. Activate Virtual Environment
-Linux
-```
-source bin/activate
-```
-
-Windows
-```
-source Scripts/activate
-```
-
-## 4. Install Dependencies 
-```
-pip install -r requirements.txt
-```
-
-## 5. Run the App  
-```
-flask run
-```
-or
-```
-python -m flask run
-```
-Check http://localhost:5000/
+## 2. Description of the Codebase
 
 
-## 6. Quit the App
-Press CTRL+C
-
-
-## 7. Deactivate Virtual Environment
-```
-deactivate
-```
+## 3. How it works
