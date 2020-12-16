@@ -127,20 +127,20 @@ def search(f):
     it into binary code, and send the code to the specific AI Platform Image
     Classification Model. This will then return probability for each class.
     '''
-    #convert image to binary encoded string for the model to read
+    # convert image to binary encoded string for the model to read
     with open(f, 'rb') as image_file:
         encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
 
     image_bytes = {'b64': str(encoded_string)}
     instances = [{'image_bytes': image_bytes, 'key': '1'}]
     
-    #establishing varibales for calling model
+    # establishing variables for calling model
     project = "aitry-294619"
     region = "us-central1"
     model = "trial41"
     version = "v1"
 
-    #creating the api endpoint from model variables
+    # creating the api endpoint from model variables
     prefix = "{}-ml".format(region) if region else "ml"
     api_endpoint = "https://{}.googleapis.com".format(prefix)
     client_options = ClientOptions(api_endpoint=api_endpoint)
@@ -151,7 +151,7 @@ def search(f):
     if version is not None:
         name += '/versions/{}'.format(version)
     
-    #sending the image to the model for running
+    # sending the image to the model for running
     response = service.projects().predict(
         name=name,
         body={'instances': instances}
@@ -160,7 +160,7 @@ def search(f):
     if 'error' in response:
         raise RuntimeError(response['error'])
         
-    #return results as a percentage
+    # return results as a percentage
     prediction_results = response['predictions'][0]['probabilities']
     pred_look = str(prediction_results[0] * 100) + "%"
     pred_away = str(prediction_results[1] * 100) + "%"
