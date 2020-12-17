@@ -1,6 +1,7 @@
 # README for Sabra and Melissa's Group Implementation Project
 
 ## Attention Detection
+(Because the dataset contain thousands of images it was too big to upload to github. Here is the link to the webpage where it describes the dataset and you can download it: https://www.cs.columbia.edu/CAVE/databases/columbia_gaze/)
 
 ## 1. Objective of project
 The goal of this project was to create a method of detecting if someone in a picture is looking at the screen or not. The aim was also to use a built-in algorithm on the Google Cloud Platform and use a basic web application for user interaction. 
