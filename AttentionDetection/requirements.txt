@@ -1,0 +1,5 @@
+Flask==1.1.2
+tensorflow
+google-api-python-client
+Werkzeug
+google-api-core

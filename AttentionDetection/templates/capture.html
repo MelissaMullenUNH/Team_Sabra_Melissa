@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>Attention Capture</title>
+    <!--The following code is for the open camera html page.
+    -->
+	<meta charset='utf-8'>
+	<link rel="stylesheet" href="/static/main.css" type="text/css" media="all">
+	<script src="/static/capture.js">
+	</script>
+</head>
+<body>
+<div class="contentarea">
+	<h1>
+		Attention Capture 
+	</h1>
+	  <p><b>Instructions:</b><br>
+            1) Click on "take photo"<br>
+            2) Once you have taken the photo you want, click on "select photo"<br>
+            3) Click on "submit" to submit selected photo
+        </p>
+  <div class="camera">
+    <video id="video">Video stream not available.</video>
+    <button id="startbutton">Take photo</button> 
+  </div>
+  <canvas id="canvas">
+  </canvas>
+  <div class="output">
+    <img id="photo" alt="The screen capture will appear in this box."> 
+    <button id="capbutton">Select photo</button> 
+  </div>
+</div>
+<div id="uploadresults"></div>
+<form action = "results" method = "POST"
+      <label for="file"></label>
+      <input type="text" id="file" name="file"><br><br>
+      <input type = "submit" class="button"/>
+</form>
+
+</body>
+</html>

@@ -1,8 +1,8 @@
 <html>
     <head>
-        <title>Attention Detection</title>
-    <!--The following code styles the buttons. The webkit code was 
-    adapted from this website: 
+        <title>Image Search</title>
+    <!--The following code styles the buttons. The webkit code was
+    adapted from this website:
     https://developer.mozilla.org/en-US/docs/Web/CSS/::file-selector-button
     -->
     <style>
@@ -25,7 +25,7 @@
         background-color: #bfbfbf;
         color: blue;
         font-size: 15;
-    } 
+    }
     input[type=file]::-webkit-file-upload-button {
         background-color: blue;
         border: 2px solid black;
@@ -50,40 +50,34 @@
         margin: 4px 2px;
         cursor: pointer;
     }
-   
-    </style>    
+
+    </style>
     </head>
     <!-- Setting the background color and the header -->
     <body style="background-color:#f2f2f2;">
         <div class="header">
             <h1>Attention Detection: Image Selection</h1>
         </div>
-        
+
         <!-- The following code adds a blue line across the page -->
         <HR COLOR="blue" SIZE="3">
-        <!-- Code for taking a photo -->    
+        <!-- Code for taking a photo -->
         <p><b>Take Photo</b></p>
-        <a href="/camera"><input type="button" class="button" value="Open Camera"></a> 
-        <p><b>Instructions:</b><br>
-            1) Clicking on "Open Camera" will open another window on your computer. 
-            Locate that window and click on it. <br>
-            2) Smile!<br>
-            3) Click the space bar key to take a picture.    
-        </p>
+        <a href="/capture"><input type="button" class="button" value="Open Camera"></a>
         <HR COLOR="blue" SIZE="3">
 
-        <!-- Code for uploading a photo -->    
+        <!-- Code for uploading a photo -->
         <p><b>Upload an Image</b></p>
-        <form action = "search" method = "POST" 
+        <form action = "search" method = "POST"
             enctype = "multipart/form-data">
             <label for="file"></label>
             <input type = "file" name = "file" id="file"/>
             <input type = "submit" class="button"/>
         </form>
-        <p><b>Instructions:</b><br>
-            1) Clicking on "Choose File" will open your File Explorer. <br>
-            2) Locate and select the image you want to upload. <br>
-            3) Click submit.   
+	<p><b>Instructions:</b><br>
+            1) Clicking on "Choose File" will open your File Explorer<br>
+            2) Locate and submit the image you want to upload<br>
+            3) Click submit
         </p>
         <HR COLOR="blue" SIZE="3">
     <section class="row">
