@@ -6,6 +6,7 @@ from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
 from google.api_core.client_options import ClientOptions
 
+# Initialise Flask
 app = Flask(__name__, static_url_path="/static", static_folder='/data/attapp/static')
 
 # Provide credentials to authenticate to a Google Cloud API
@@ -27,10 +28,12 @@ def allowed_file(filename):
 def home():
     return render_template('index.html')
 
+#for the open camera page: render the capture html
 @app.route('/capture', methods=['GET', 'POST'])
 def capture():
     return render_template('capture.html')
 
+#for the open camera page: uploading taken picture to folder
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
@@ -41,6 +44,7 @@ def upload():
             file.save(filepath)
             return filepath
 
+#for the open camera page: send saved picture to model and get model results back
 @app.route('/results', methods=['GET', 'POST'])
 def results():
     if request.method == 'POST':
