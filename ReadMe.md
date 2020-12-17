@@ -7,7 +7,8 @@ The goal of this project was to create a method of detecting if someone in a pic
 The idea behind this project was to detect whether someone was paying attention to their computer. With our current pandemic much of school and business meetings are being conducted online, it is useful to make sure that people are paying attention to their screen.
 
 ## 2. Description of the Codebase
-The model we used operates through GCP, so the majority of our codebase is Flask related. To elaborate, our codebase contains several important files - **myflask.py**, **index.html**, and **search_results.html**. app.py contains the functions that make the flask app operate, index.html contains the HTML and CSS to create the first page of the flask app, and search_results contains the HTML and CSS to create the second page of the flask app.
+The model we used operates through GCP, so the majority of our codebase is Flask related. To elaborate, our codebase contains several important files - **myflask.py**, **capture.js**, and the templates: **main.css**, **capture.html**, **index.html**, and **search_results.html**. 
+myflask.py contains the functions that make the flask app operate, index.html contains the HTML and CSS to create the first page of the flask app, and search_results contains the HTML and CSS to create the second page of the flask app.
 
 app.py contains three crucial functions - search(), upload_file(), and camera(). search() takes the picture that the user either uploads via upload_file() or captures via camera(), converts this image into binary code, and sends this code to our GCP Attention Detection model. Our model will return the probability that a user is both looking at the screen and looking away from the screen. 
 
